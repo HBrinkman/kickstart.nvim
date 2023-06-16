@@ -306,7 +306,8 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<C-1>', '<Cmd>Neotree toggle<CR>', { desc = '[E]xplorer' })
 vim.keymap.set({ "n", "v", "i" }, "<C-S>", "<C-c>:update | :Prettier<cr>", { silent = true, desc = "Save" })
 vim.keymap.set('n', '<C-w>', "<C-c>:q<cr>", { desc = '[C]lose file' })
-
+vim.keymap.set('n', '<leader>q', "<C-c>:q<cr>", { desc = '[C]lose file' })
+vim.keymap.set('n', '<leader>e', "<Cmd>Neotree toggle<CR>", { desc = '[C]lose file' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -377,8 +378,8 @@ require('nvim-treesitter.configs').setup {
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
